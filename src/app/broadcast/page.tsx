@@ -90,7 +90,6 @@ export default function BroadcastPage() {
     if (roomIdRef.current) {
       const roomRef = ref(db, `rooms/${roomIdRef.current}`);
       await remove(roomRef);
-      console.log(`🧹 Room ${roomIdRef.current} を削除しました`);
       roomIdRef.current = null;
     }
   };
