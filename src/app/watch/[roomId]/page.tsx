@@ -1,7 +1,9 @@
-import WatchClient from "./WatchClient"; // 先ほど作成したコンポーネントをインポート
+import WatchClient from "./WatchClient";
 
-// こちらはサーバーコンポーネント ( "use client" は不要 )
-export default async function WatchPage({ params }: { params: { roomId: string } }) {
-  const { roomId } = await params; // ← await が必要！
+type Params = Promise<{roomId: string}>;
+
+export default async function WatchPage(props: { params: Params }) {
+  const { roomId } = await props.params;
+
   return <WatchClient roomId={roomId} />;
 }

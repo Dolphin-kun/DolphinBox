@@ -1,10 +1,16 @@
 {
   "hosting": {
-    "source": ".",
+    "public": ".firebase/dolphin-box/hosting", 
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "ssrdolphinbox"
+      }
     ],
     "frameworksBackend": {
       "region": "asia-east1"
